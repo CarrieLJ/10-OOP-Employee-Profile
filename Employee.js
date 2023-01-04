@@ -1,6 +1,6 @@
 const { getSystemErrorName } = require("util");
 
-Constructor (name, id, email) {
+Employee (name, id, email) {
     this.name = name;
     this.id = id;
     this.email = email;
@@ -8,6 +8,15 @@ Constructor (name, id, email) {
 
 getName() {
     return this.name;
+}
+getId() {
+    return this.id;
+}
+getEmail() {
+    return this.email;
+}
+getRole() {
+    return Employee;
 }
 
 
