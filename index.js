@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const src = require('./src');
+const src = require('./src/html_template');
 
-const employeeInfo = [
+const questions = [
     {
         type: 'input',
         name: 'name',
