@@ -8,7 +8,19 @@ const Intern = require("../lib/Intern");
 // });
 
 test('school via constructor', () => {
+  const s = 'Fillmore';
+  const e = new Intern ('Fred', 10, 'name@gmail.com', s);
+  expect(e.school).toBe(s)
+});
+
+test('school via getSchool', () => {
     const s = 'Fillmore';
-    const e = new Intern('Fred', 10, 'name@gmail.com', 'Fillmore');
+    const e = new Intern('Fred', 10, 'name@gmail.com', s);
     expect(e.school).toBe(s)
   });
+
+test('role via getRole()', () => {
+  const r = 'Intern';
+  const e = new Intern (r);
+  expect(e.getRole()).toBe(r)
+});
