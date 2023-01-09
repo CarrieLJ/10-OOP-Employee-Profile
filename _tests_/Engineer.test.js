@@ -9,7 +9,7 @@ const Engineer = require("../lib/Engineer");
 
 test('github via constructor', () => {
     const g = 'https://github.com';
-    const e = new Engineer(g);
+    const e = new Engineer('Fred', 10, 'name@gmail.com', 'https://github.com');
     expect(e.github).toBe(g)
   });
   

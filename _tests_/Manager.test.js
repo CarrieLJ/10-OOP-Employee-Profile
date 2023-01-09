@@ -9,6 +9,6 @@ const Manager = require("../lib/Manager");
 
 test('officeNumber via constructor', () => {
     const o = 5;
-    const e = new Manager(o);
+    const e = new Manager('Fred', 10, 'name@gmail.com', 5);
     expect(e.officeNumber).toBe(o)
   });

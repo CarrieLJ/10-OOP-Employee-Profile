@@ -9,6 +9,6 @@ const Intern = require("../lib/Intern");
 
 test('school via constructor', () => {
     const s = 'Fillmore';
-    const e = new Intern(s);
+    const e = new Intern('Fred', 10, 'name@gmail.com', 'Fillmore');
     expect(e.school).toBe(s)
   });
