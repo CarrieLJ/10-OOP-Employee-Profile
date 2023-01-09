@@ -26,26 +26,36 @@ const questions = [
     },
     {
         //option to choose this or to finnish building my team
+        type: 'confirm',
+        name: 'continue',
+        choices: ['Do you want to add another employee?'],
+        //if yes, go to title list to add engineer or intern
+        //if no, 
+        // Function call to initialize app
+            // if N, return (init());
+    },
+
+    {
         type: 'list',
         name: 'title',
-        choices: ['Engineer', 'Intern'],
+        choices: ['Add an Engineer', 'Add an Intern'],
+        when: (answers) => answers.continue
         //when engineer chosen; prompted to add engineer's name, ID, email, & github username; then taken back to the menu
         //when intern chosen; prompted to enter intern's name, ID, email, and school; then taken back to the menu
     },
     //add finish building team to generate HTML
 ]
 
-// TODO: Create a function to write HTML page
+// Create a function to write HTML page
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data)
 }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then(inquireResponse => {
         writeToFile('html_template.html', src({...inquireResponse}))
     })
 }
 
-// Function call to initialize app
-init();
+init ();

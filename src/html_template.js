@@ -20,11 +20,11 @@ function generateHtml(data) {
                   <p class="card-text">${data.title}</p>
                 </div>
                 <ul class="list-group list-group-flush align-items-center">
-                  <li class="list-group-item">${data.id}</li>
-                  <li class="list-group-item">${data.email}</li>
-                  <li class="list-group-item">${data.number}</li>
-                  <li class="list-group-item">${data.github}</li>
-                  <li class="list-group-item">${data.school}</li>
+                  <li class="list-group-item">ID: ${data.id}</li>
+                  <li class="list-group-item">Email: ${data.email}</li>
+                  <li class="list-group-item">Office Number: ${data.number}</li>
+                  <li class="list-group-item">GitHub: ${data.github}</li>
+                  <li class="list-group-item">School: ${data.school}</li>
                 </ul>
               </div>
         </body>
