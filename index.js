@@ -9,6 +9,9 @@ const dirPath = path.resolve(__dirname, "dist");
 const filePath = path.join(dirPath, "index.html");
 const employeeArray = [];
 
+
+createManager();
+
 function createManager() {
   inquirer.prompt[
     ({
@@ -31,7 +34,8 @@ function createManager() {
       name: "officeNumber",
       message: "Office number",
     })
-  ].then((answers) => {
+  ]
+  .then((answers) => {
     const manager = new Manager(
       answers.name,
       answers.id,
@@ -39,7 +43,7 @@ function createManager() {
       answers.officeNumber
     );
     employeeArray.push(manager);
-    createManager();
+    
     createTeam();
   });
 
