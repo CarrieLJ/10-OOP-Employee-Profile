@@ -21,9 +21,9 @@ function generateHtml(data) {
                 </div>
                 <ul class="list-group list-group-flush align-items-center">
                   <li class="list-group-item">ID: ${data.id}</li>
-                  <li class="list-group-item">Email: <a href="url"> ${data.email}</a></li>
+                  <li class="list-group-item">Email: <a href="mailto:"> ${data.email}</a></li>
                   <li class="list-group-item">Office Number: ${data.number}</li>
-                  <li class="list-group-item">GitHub: <a href="url"> ${data.github}</a></li>
+                  <li class="list-group-item">GitHub: <a href="${data.githublink}">${data.username}</a></li>
                   <li class="list-group-item">School: ${data.school}</li>
                 </ul>
               </div>

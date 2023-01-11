@@ -30,10 +30,10 @@ const questions = [
         name: 'continue',
         choices: ['Add an Engineer?', 'Add an Intern?', 'Finish and create.'],
             if (engineer) {
-                return engineerQuestions
-            } else (intern) {
-                return internQuestions
-            } else writeToFile();
+                prompt.engineerQuestions
+            // } else (intern) {
+            //     return internQuestions
+            // } else writeToFile();
             }
         //if yes, go to title list to add engineer or intern
         //if no, 
@@ -64,8 +64,13 @@ const engineerQuestions = [
     },
     {
         type: 'input',
-        name: 'github',
-        message: 'GitHub username',
+        name: 'githublink',
+        message: 'Enter GitHub link.',
+    },
+    {
+    type: 'input',
+    name: 'username',
+    message: 'Enter GitHub username.',
     },
 ]
 
