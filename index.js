@@ -35,6 +35,7 @@ const questions = [
             //     return internQuestions
             // } else writeToFile();
             }
+            
         //if yes, go to title list to add engineer or intern
         //if no, 
         // Function call to initialize app
@@ -98,6 +99,9 @@ const internQuestions = [
 ]
 
 // Create a function to write HTML page
+
+
+
 function writeToFile(fileName, data) {
     return fs.writeFileSync(path.join(process.cwd(), fileName), data)
 }
