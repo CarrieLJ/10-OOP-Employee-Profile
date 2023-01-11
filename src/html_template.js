@@ -1,5 +1,5 @@
 function generateHtml(data) {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
     <html lang="en-US">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     
@@ -14,21 +14,44 @@ function generateHtml(data) {
             <header class="jumbotron">
                 <h1 class="display-3 align-items-center">Employee Profiles</h1>
             </header>
+
             <div class="card align-items-center" style="width: 18rem;">
                 <div class="card-body align-items-center">
-                  <h5 class="card-title">${manager.getName()}</h5>
-                  <p class="card-text">${data.title}</p>
+                  <h5 class="card-title">${Manager.getName()}</h5>
+                  <p class="card-text">${Manager.getRole()}</p>
                 </div>
                 <ul class="list-group list-group-flush align-items-center">
-                  <li class="list-group-item">ID: ${data.id}</li>
-                  <li class="list-group-item">Email: <a href="mailto:"> ${data.email}</a></li>
-                  <li class="list-group-item">Office Number: ${data.number}</li>
-                  <li class="list-group-item">GitHub: <a href="${data.githublink}">${data.username}</a></li>
-                  <li class="list-group-item">School: ${data.school}</li>
+                  <li class="list-group-item">ID: ${Manager.getId()}</li>
+                  <li class="list-group-item">Email: <a href="mailto:"> ${Manager.getEmail()}</a></li>
+                  <li class="list-group-item">Office Number: ${Manager.getOfficeNumber()}</li>
                 </ul>
-              </div>
+            </div>
+
+          <div class="card align-items-center" style="width: 18rem;">
+            <div class="card-body align-items-center">
+              <h5 class="card-title">${Engineer.getName()}</h5>
+              <p class="card-text">${Engineer.getRole()}</p>
+            </div>
+            <ul class="list-group list-group-flush align-items-center">
+              <li class="list-group-item">ID: ${Engineer.getId()}</li>
+              <li class="list-group-item">Email: <a href="mailto:"> ${Engineer.getEmail()}</a></li>
+              <li class="list-group-item">GitHub: <a href="${Engineer.getGitHub()}">${Engineer.gitHubUsername}</a></li>
+            </ul>
+          </div>
+
+          <div class="card align-items-center" style="width: 18rem;">
+            <div class="card-body align-items-center">
+              <h5 class="card-title">${Intern.getName()}</h5>
+              <p class="card-text">${Intern.getRole()}</p>
+            </div>
+            <ul class="list-group list-group-flush align-items-center">
+              <li class="list-group-item">ID: ${Intern.getId()}</li>
+              <li class="list-group-item">Email: <a href="mailto:"> ${Intern.getEmail()}</a></li>
+              <li class="list-group-item">School: ${Intern.getSchool()}</li>
+            </ul>
+          </div>
         </body>
-    </html>`
-  }
-  
-  module.exports = generateHtml;
+    </html>`;
+}
+
+module.exports = generateHtml;
