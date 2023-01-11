@@ -16,7 +16,7 @@ function generateHtml(data) {
             </header>
             <div class="card align-items-center" style="width: 18rem;">
                 <div class="card-body align-items-center">
-                  <h5 class="card-title">${data.name}</h5>
+                  <h5 class="card-title">${manager.getName()}</h5>
                   <p class="card-text">${data.title}</p>
                 </div>
                 <ul class="list-group list-group-flush align-items-center">

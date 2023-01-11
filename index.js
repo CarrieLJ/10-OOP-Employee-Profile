@@ -2,8 +2,17 @@ const inquirer = require('inquirer');
 const src = require('./src/html_template');
 const fs = require('fs');
 const path = require('path');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const dirPath = path.resolve(__dirname, 'dist');
+const filePath = path.join(dirPath, 'index.html');
+const employeeArray = [];
 
-const questions = [
+
+
+function createManager () {
+    inquirer.prompt [
     {
         type: 'input',
         name: 'name',
@@ -21,31 +30,42 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'number',
+        name: 'officeNumber',
         message: 'Office number',
-    },
-    {
-        //option to choose this or to finnish building my team
-        type: 'list',
-        name: 'continue',
-        choices: ['Add an Engineer?', 'Add an Intern?', 'Finish and create.'],
-            if (engineer) {
-                prompt.engineerQuestions
-            // } else (intern) {
-            //     return internQuestions
-            // } else writeToFile();
-            }
-            
-        //if yes, go to title list to add engineer or intern
-        //if no, 
-        // Function call to initialize app
-            // if N, return (init());
-    },
+    }]
+    .then( (answers) => {
+        const manager = new Manager(
+            answers.name,
+            answers.id,
+            answers.email,
+            answers.officeNumber
+        );
+        employeeArray.push(manager);
+    createTeam ();
+    });
 
-        //when engineer chosen; prompted to add engineer's name, ID, email, & github username; then taken back to the menu
-        //when intern chosen; prompted to enter intern's name, ID, email, and school; then taken back to the menu
-    //add finish building team to generate HTML
-]
+    function createTeam() {
+        inquirer.prompt([{
+            type: 'list',
+            name: 'teamMember',
+            message: 'Do you want to add an Engineer, Intern, or are you done?',
+            choices: ['Engineer', 'Intern', 'Complete'],
+        }
+
+        ])
+        .then((userChoice) => {
+            switch (userChoice.teamMember) {
+                case 'Engineer': 
+                    engineerQuestions();
+                    break;
+                case 'Intern':
+                    internQuestions();
+                    break;            
+                default:
+                    buildTeam();
+            }
+        })
+    }
 
 const engineerQuestions = [
     {
@@ -98,19 +118,9 @@ const internQuestions = [
     },
 ]
 
-// Create a function to write HTML page
-
-
-
-function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
-}
 
 // Create a function to initialize app
-function init() {
-    inquirer.prompt(questions).then(inquireResponse => {
-        writeToFile('html_template.html', src({...inquireResponse}))
-    })
+function buildTeam() {
+    // inquirer.prompt(questions).then(inquireResponse => {
+        fs.writeToSync(filePath, src(employeeArray), 'utf8');
 }
-
-init ();
