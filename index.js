@@ -2,7 +2,6 @@ const inquirer = require('inquirer');
 const src = require('./src/html_template');
 const fs = require('fs');
 const path = require('path');
-const { nextTick } = require('process');
 
 const questions = [
     {
@@ -30,6 +29,12 @@ const questions = [
         type: 'list',
         name: 'continue',
         choices: ['Add an Engineer?', 'Add an Intern?', 'Finish and create.'],
+            if (engineer) {
+                return engineerQuestions
+            } else (intern) {
+                return internQuestions
+            } else writeToFile();
+            }
         //if yes, go to title list to add engineer or intern
         //if no, 
         // Function call to initialize app
@@ -39,6 +44,52 @@ const questions = [
         //when engineer chosen; prompted to add engineer's name, ID, email, & github username; then taken back to the menu
         //when intern chosen; prompted to enter intern's name, ID, email, and school; then taken back to the menu
     //add finish building team to generate HTML
+]
+
+const engineerQuestions = [
+    {
+        type: 'input',
+        name: 'name',
+        message: 'Engineer name',
+    },
+    {
+        type: 'input',
+        name: 'id',
+        message: 'Employee ID',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'email address',
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'GitHub username',
+    },
+]
+
+const internQuestions = [
+    {
+        type: 'input',
+        name: 'name',
+        message: 'Intern name',
+    },
+    {
+        type: 'input',
+        name: 'id',
+        message: 'Employee ID',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'email address',
+    },
+    {
+        type: 'input',
+        name: 'school',
+        message: 'Name of School',
+    },
 ]
 
 // Create a function to write HTML page
