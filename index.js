@@ -13,7 +13,7 @@ const employeeArray = [];
 createManager();
 
 function createManager() {
-  inquirer.prompt[
+  inquirer.prompt([
     ({
       type: "input",
       name: "name",
@@ -34,7 +34,7 @@ function createManager() {
       name: "officeNumber",
       message: "Office number",
     })
-  ]
+  ])
   .then((answers) => {
     const manager = new Manager(
       answers.name,
