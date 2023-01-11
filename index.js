@@ -2,6 +2,7 @@ const inquirer = require('inquirer');
 const src = require('./src/html_template');
 const fs = require('fs');
 const path = require('path');
+const { nextTick } = require('process');
 
 const questions = [
     {
@@ -26,23 +27,17 @@ const questions = [
     },
     {
         //option to choose this or to finnish building my team
-        type: 'confirm',
+        type: 'list',
         name: 'continue',
-        choices: ['Do you want to add another employee?'],
+        choices: ['Add an Engineer?', 'Add an Intern?', 'Finish and create.'],
         //if yes, go to title list to add engineer or intern
         //if no, 
         // Function call to initialize app
             // if N, return (init());
     },
 
-    {
-        type: 'list',
-        name: 'title',
-        choices: ['Add an Engineer', 'Add an Intern'],
-        when: (answers) => answers.continue
         //when engineer chosen; prompted to add engineer's name, ID, email, & github username; then taken back to the menu
         //when intern chosen; prompted to enter intern's name, ID, email, and school; then taken back to the menu
-    },
     //add finish building team to generate HTML
 ]
 
