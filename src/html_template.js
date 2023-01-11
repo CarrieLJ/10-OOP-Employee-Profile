@@ -1,4 +1,4 @@
-function generateHtml(data) {
+function generateHtml(Manager, Engineer, Intern) {
   return `<!DOCTYPE html>
     <html lang="en-US">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
@@ -17,37 +17,37 @@ function generateHtml(data) {
 
             <div class="card align-items-center" style="width: 18rem;">
                 <div class="card-body align-items-center">
-                  <h5 class="card-title">${Manager.getName()}</h5>
-                  <p class="card-text">${Manager.getRole()}</p>
+                  <h5 class="card-title">${Manager.name}</h5>
+                  <p class="card-text">${Manager.role}</p>
                 </div>
                 <ul class="list-group list-group-flush align-items-center">
-                  <li class="list-group-item">ID: ${Manager.getId()}</li>
-                  <li class="list-group-item">Email: <a href="mailto:"> ${Manager.getEmail()}</a></li>
-                  <li class="list-group-item">Office Number: ${Manager.getOfficeNumber()}</li>
+                  <li class="list-group-item">ID: ${Manager.id}</li>
+                  <li class="list-group-item">Email: <a href="mailto:"> ${Manager.email}</a></li>
+                  <li class="list-group-item">Office Number: ${Manager.officeNumber}</li>
                 </ul>
             </div>
 
           <div class="card align-items-center" style="width: 18rem;">
             <div class="card-body align-items-center">
-              <h5 class="card-title">${Engineer.getName()}</h5>
-              <p class="card-text">${Engineer.getRole()}</p>
+              <h5 class="card-title">${Engineer.name}</h5>
+              <p class="card-text">${Engineer.role}</p>
             </div>
             <ul class="list-group list-group-flush align-items-center">
-              <li class="list-group-item">ID: ${Engineer.getId()}</li>
-              <li class="list-group-item">Email: <a href="mailto:"> ${Engineer.getEmail()}</a></li>
-              <li class="list-group-item">GitHub: <a href="${Engineer.getGitHub()}">${Engineer.gitHubUsername}</a></li>
+              <li class="list-group-item">ID: ${Engineer.id}</li>
+              <li class="list-group-item">Email: <a href="mailto:"> ${Engineer.email}</a></li>
+              <li class="list-group-item">GitHub: <a href="${Engineer.gitHub}">${Engineer.gitHubUsername}</a></li>
             </ul>
           </div>
 
           <div class="card align-items-center" style="width: 18rem;">
             <div class="card-body align-items-center">
-              <h5 class="card-title">${Intern.getName()}</h5>
-              <p class="card-text">${Intern.getRole()}</p>
+              <h5 class="card-title">${Intern.name}</h5>
+              <p class="card-text">${Intern.role}</p>
             </div>
             <ul class="list-group list-group-flush align-items-center">
-              <li class="list-group-item">ID: ${Intern.getId()}</li>
-              <li class="list-group-item">Email: <a href="mailto:"> ${Intern.getEmail()}</a></li>
-              <li class="list-group-item">School: ${Intern.getSchool()}</li>
+              <li class="list-group-item">ID: ${Intern.id}</li>
+              <li class="list-group-item">Email: <a href="mailto:"> ${Intern.email}</a></li>
+              <li class="list-group-item">School: ${Intern.school}</li>
             </ul>
           </div>
         </body>
