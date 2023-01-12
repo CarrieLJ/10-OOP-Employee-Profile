@@ -5,6 +5,7 @@ const path = require("path");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const generateHtml = require("./src/html_template");
 const dirPath = path.resolve(__dirname, "dist");
 const filePath = path.join(dirPath, "index.html");
 const employeeArray = [];
@@ -66,6 +67,8 @@ function createManager() {
             internQuestions();
             break;
           default:
+            // console.log(employeeArray);
+            generateHtml(employeeArray[0]);
             buildTeam();
         }
       });
@@ -147,8 +150,10 @@ function createManager() {
           employeeArray.push(intern);
 
           createTeam();
+          // console.log(employeeArray);
         });
     }
+
 
     function buildTeam() {
       fs.writeFileSync(filePath, src(employeeArray), "utf8");

@@ -1,4 +1,5 @@
 function generateHtml(Manager, Engineer, Intern) {
+  console.log(Manager);
   return `<!DOCTYPE html>
     <html lang="en-US">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>

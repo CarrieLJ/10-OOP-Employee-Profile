@@ -7,12 +7,15 @@ For this project, I am using the command line to prompt questions in order to cr
 NA
 
 ## Usage
-Here is a link to my video to show how to utilize this application: 
+To use, open the code and run to verify tests are working properly by entering "npm run test". 
 
-ADD SCREENSHOTS
+![npm_run_test](https://user-images.githubusercontent.com/114967552/211978176-d5777aca-e2e9-4515-9355-ce6b6fbe4c6a.JPG)
 
-## Credits
+To initiate questions to enter employee data, enter "node index.js". 
 
+![node_index_js](https://user-images.githubusercontent.com/114967552/211978170-392f07e7-1f3f-4862-bce2-0f9dab3f886b.JPG)
+
+Here is a link to my video to show how to utilize this application: https://drive.google.com/file/d/1xE0zdyUgpZqwhhhFY75edH3KXNvp5C8j/view?usp=share_link
 
 ## License
 MIT License
